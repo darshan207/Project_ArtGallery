@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="CSS/style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Art</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -26,7 +26,7 @@
                 if(isset($_SESSION['loggedin']) and $_SESSION['loggedin']=='yes')
                 {
                     echo '<a href="logout.php" class="right"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a><p class="right-1"><i class="fas fa-user"></i>&nbsp;'
-                    .$_SESSION['username'].'</p>';
+                    .$_SESSION['username'].'</p> <a href="cart.php" class="right"><i class="fa fa-shopping-cart"></i></a>';
                 }
                 else
                 {
@@ -42,11 +42,24 @@
             <div class="box">
                 <img src="Image/2.jpg">
                 <div class="box-content">
-                    <h3 class="title">Williamson</h3>
-                    <span class="post">Web designer</span>
+                    <h3 class="title">Darshan</h3>
+                    <span class="post">₹2000</span>
                 </div>
                 <ul class="icon">
-                    <li><a href="#"><i class="fa fa-search"></i></a></li>
+                    <li><a href="#" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="box">
+                <img src="Image/2.jpg">
+                <div class="box-content">
+                    <h3 class="title">Dhyey</h3>
+                    <span class="post">₹1999</span>
+                </div>
+                <ul class="icon">
+                    <li><a href="#" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="fa fa-link"></i></a></li>
                 </ul>
             </div>
@@ -59,7 +72,7 @@
                     <span class="post">Web designer</span>
                 </div>
                 <ul class="icon">
-                    <li><a href="#"><i class="fa fa-search"></i></a></li>
+                    <li><a href="#" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="fa fa-link"></i></a></li>
                 </ul>
             </div>
@@ -72,7 +85,7 @@
                     <span class="post">Web designer</span>
                 </div>
                 <ul class="icon">
-                    <li><a href="#"><i class="fa fa-search"></i></a></li>
+                    <li><a href="#" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="fa fa-link"></i></a></li>
                 </ul>
             </div>
@@ -85,20 +98,7 @@
                     <span class="post">Web designer</span>
                 </div>
                 <ul class="icon">
-                    <li><a href="#"><i class="fa fa-search"></i></a></li>
-                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-            <div class="box">
-                <img src="Image/2.jpg">
-                <div class="box-content">
-                    <h3 class="title">Miranda Roy</h3>
-                    <span class="post">Web designer</span>
-                </div>
-                <ul class="icon">
-                    <li><a href="#"><i class="fa fa-search"></i></a></li>
+                    <li><a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="fa fa-link"></i></a></li>
                 </ul>
             </div>

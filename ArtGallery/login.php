@@ -1,15 +1,17 @@
 <?php
 	session_start();
     $message="";
+    if(isset($_SESSION['loggedin']))
+    {
+        header("location:index.php");
+    }
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $connect = new PDO("mysql:host=127.0.0.1;dbname=art_gallery", 'root', '');
-		    $connect->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+	    $connect->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         $username=$_POST['username'];
-        $email=$_POST['email'];
         $password=md5($_POST['username'].$_POST['password']);
-    
-			$sql="select * from userdata where username='".$username."' and password='".$password."'";;
+        $sql="select * from userdata where username='".$username."' and password='".$password."'";
        $user= $connect->query($sql)->fetchAll();
        if(sizeof($user)==0)
       {
@@ -17,10 +19,10 @@
       }
 			else{
 				$_SESSION['username']=$username;
-				$_SESSION['email']=$email;
+				$_SESSION['email']=$user[0]['email'];
 				$_SESSION['id']=$user[0]['id'];
 				$_SESSION['loggedin']="yes";
-				header('location:welcome.php');
+				header('location:index.php');
 			}
 		}
 ?>
@@ -29,8 +31,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>EasyToQuiz Login</title>
-    <link rel="shortcut icon" href="../static/Logo2.png" />
+    <title>Better Eyes:Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
@@ -46,7 +47,7 @@
 
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-        <div class="box">
+        <div class="box-1">
             <h1>Login</h1>
             <div class="textbox">
                 <i class="fas fa-user"></i>
@@ -63,15 +64,18 @@
                 <span class="default"></span>
             </label>
             <input type="submit" name="submit" class="btn" value="Login">
-            <a href="/EasyToQuiz/userregistration" class="btn">Sign Up</button></a>
+            <a href="signup.php" class="btn">Sign Up</button></a>
         </div>
     </form>
-    <!-- {% for message in messages %}
-      <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
-        <strong>{{message}}</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-	  {%endfor%} -->
+    <?php
+		if($message!="")
+		{
+		echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			<strong>'.$message.'</strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>';
+		}
+	?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>

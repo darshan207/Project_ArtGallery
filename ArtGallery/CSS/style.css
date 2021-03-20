@@ -20,7 +20,16 @@ body {
     padding: 12px;
     color: rgb(37, 37, 37);
     text-decoration: none;
-    font-size: 17px;
+    font-size: 17px;border-top: none;
+}
+
+.navbar-1 .active{
+  float: left;
+  padding: 12px;
+  color: rgb(37, 37, 37);
+  background-color: rgb(209, 209, 209);
+  text-decoration: none;
+  font-size: 17px;border-top: none;
 }
 
 .navbar-1 a:hover {
@@ -83,6 +92,17 @@ body {
     float: left;
     margin: 0 10px;
   }
+  .textbox textarea{
+    border: none;
+    outline: none;
+    background: none;
+    color: #000;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+    resize: unset;
+  }
   
   .btn{
     width: 45%;
@@ -99,6 +119,9 @@ body {
   .btn:hover{
     background-color: var(--color);
     color: #fff;
+  }
+  .btn-1{
+    width: fit-content !important;
   }
   
   .errorbox{
@@ -126,6 +149,7 @@ body {
 .row{
   margin:10px;
   margin-top: 30px;
+  top:100px;
 }
 
   .box{
@@ -136,6 +160,7 @@ body {
     position: relative;
     margin: 10px;
     margin-bottom: 40px;
+    top:20px;
 }
 .box img{
     width: 100%;
@@ -198,6 +223,7 @@ body {
 .box .icon li{
     margin: 0 2px;
     display: inline-block;
+    color: #fff;
 }
 .box .icon li a{
     color: #333;
@@ -211,7 +237,123 @@ body {
     display: block;
     transition: all 0.3s ease 0s;
 }
+.box .icon li button{
+  color: #333;
+  background-color: #fff;
+  font-size: 13px;
+  text-align: center;
+  line-height: 31px;
+  height: 33px;
+  width: 33px;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  transition: all 0.3s ease 0s;
+  padding-bottom: 95%;
+}
 .box .icon li a:hover{ box-shadow: 0 0 0 3px rgba(255,255,255,0.4); }
 @media only screen and (max-width:990px){
     .box{ margin: 0 0 30px; }
+}
+
+.box .icon li button:hover{ box-shadow: 0 0 0 3px rgba(255,255,255,0.4); }
+@media only screen and (max-width:990px){
+    .box{ margin: 0 0 30px; }
+}
+
+.btnicon-2{
+  width: fit-content !important;
+  position: fixed;
+  bottom: 1%;
+  left: 1%;
+  color: var(--color);
+  background-color: transparent;
+}
+.btnicon-4{
+  width: 100px !important;
+  position: fixed;
+  bottom: 1%;
+  right:  1%;
+  color: var(--color);
+  background-color: transparent;
+}
+
+.btnicon-2 i{
+  background: none;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+  padding: 5px;
+  font-size: 60px;
+}
+.btnicon-4 i{
+  background: none;
+  background-color: transparent;
+  color: #000;
+  border: transparent;
+  font-weight: bolder;
+  cursor: pointer;
+  margin: auto;
+  border-radius: 35px;
+  font-size: 60px;
+
+}
+.btnicon-2 i:hover,.btnicon-4 i:hover{
+  background-color: transparent;
+  color: var(--color);
+  align-self: center;
+}
+
+.container{
+  margin: 50px auto;
+}
+.cart tr{
+  margin-bottom: 20px;
+  padding: 30px;
+}
+.cart-item{
+  padding: 10px;
+  /* width: fit-content; */
+  display:block;
+  text-align: center;
+}
+.cart-item img{
+  width: 100%;
+}
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); 
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5); 
+}
+
+.top{
+  position: fixed;
+  top: 60px;
+  left: 10px;
+}
+
+.submit-btn{
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+.contact{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.contact h1{
+  font-size: 30px;
+}
+
+.contact h6{
+  font-size: 20px;
 }

@@ -1,6 +1,10 @@
 <?php
 	session_start();
     $message="";
+	if(isset($_SESSION['loggedin']))
+    {
+        header("location:index.php");
+    }
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $connect = new PDO("mysql:host=127.0.0.1;dbname=art_gallery", 'root', '');
@@ -27,23 +31,23 @@
 				$_SESSION['username']=$username;
 				$_SESSION['email']=$email;
 				$sql1="select id from userdata where username='".$username."' and email='".$email."'";
-				$_SESSION['id']=$connect->query($sql1)->fetchAll();
+				$id=$connect->query($sql1)->fetchAll();
+				$_SESSION['id']=$id[0]['id'];
 				$_SESSION['loggedin']="yes";
-				header('location:welcome.php');
+				header('location:index.php');
 			}
 		}
     }
 ?>
 <head>
-	<title>EasyToQuiz Registration</title>
-	<link rel="shortcut icon" href="../static/Logo2.png" />
+	<title>Better Eyes:Registration</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
 	<form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "POST" >
-		<div class="box">
+		<div class="box-1">
 
 			<!-- Username : -->
 			<h1>Sign Up</h1>
@@ -73,7 +77,7 @@
 			</div>
 			
 			<input type = "submit" class="btn" name= "submit" id="submit" value = "Register">
-			<a href="" class="btn">Login</button></a>
+			<a href="login.php" class="btn">Login</button></a>
 
 		</div>
 	</form>
