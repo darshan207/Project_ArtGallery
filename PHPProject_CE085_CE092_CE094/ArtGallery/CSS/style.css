@@ -1,0 +1,359 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+:root{
+  --bg: #fff;
+  --fg: #000;
+  --color: #6b9658;
+}
+body {
+    font-family:  sans-serif;
+
+  }
+
+.navbar-1 {
+    width: 100%;
+    background-color: rgb(252, 248, 248);
+    overflow: auto;
+}
+
+.navbar-1 a {
+    float: left;
+    padding: 12px;
+    color: rgb(37, 37, 37);
+    text-decoration: none;
+    font-size: 17px;border-top: none;
+}
+
+.navbar-1 .active{
+  float: left;
+  padding: 12px;
+  color: rgb(37, 37, 37);
+  background-color: rgb(209, 209, 209);
+  text-decoration: none;
+  font-size: 17px;border-top: none;
+}
+
+.navbar-1 a:hover {
+    background-color: rgb(209, 209, 209);
+}
+
+.navbar-1 .right{
+    float: right;
+}
+
+
+.right-1{
+  padding-top: 13px;
+  padding-right: 8px;
+  float: right;
+}
+  .box-1{
+    background-color: #e7e7e700;
+    width: 280px;
+    /* margin: 10px; */
+    padding: 20px;
+    /* border-color: #000 !important; */
+    border: 2px solid #000511;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #000511;
+    box-shadow: 5px 10px 5px 5px #444;
+    z-index: +2;
+    border-radius: 15px;
+  }
+  .box-1 h1{
+    float: left;
+    font-size: 30px;
+    border-bottom: 6px solid var(--color);
+    margin-bottom: 20px;
+    padding: 5px 0;
+  }
+  .textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid var(--color);
+  }
+  .textbox i{
+    width: 26px;
+    float: left;
+    text-align: center;
+  }
+  .textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    color: #000;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+  }
+  .textbox textarea{
+    border: none;
+    outline: none;
+    background: none;
+    color: #000;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+    resize: unset;
+  }
+  
+  .btn{
+    width: 45%;
+    background: none;
+    background-color: transparent;
+    border: 1px solid var(--color)  !important;
+    color: var(--color);
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+    margin: 12px 3px;
+  }
+  .btn:hover{
+    background-color: var(--color);
+    color: #fff;
+  }
+  .btn-1{
+    width: fit-content !important;
+  }
+  
+  .errorbox{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 20px;
+    
+    padding: 8px 0;
+    margin: 8px 0;
+    
+  }
+  .errorbox h2{
+    border: none;
+    outline: none;
+    background: none;
+    color: #df5d5d;
+    font-size: 18px;
+    width: 100%;
+    float: left;
+    margin: 0 0;
+  }
+
+.row{
+  margin:10px;
+  margin-top: 30px;
+  top:100px;
+}
+
+  .box{
+    background: linear-gradient(#fff,#000);
+    font-family: 'Roboto', sans-serif;
+    border: 3px solid #000;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+    margin-bottom: 40px;
+    top:20px;
+}
+.box img{
+    width: 100%;
+    height: auto;
+    transition: all 0.4s ease 0s;
+}
+.box:hover img{
+    opacity: 0.5;
+    transform: scale(1.2);
+}
+.box .box-content{
+    color: #fff;
+    background: #000;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 0 20px 20px;
+    opacity: 0;
+    transform-origin: top right;
+    transform: scale(0);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transition: all 0.4s ease 0s;
+}
+.box:hover .box-content{
+    opacity: 1;
+    transform: scale(1);
+}
+.box .title{
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    margin: 0 0 3px;
+}
+.box .post{
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-style: italic;
+    display: block;
+}
+.box .icon{
+    background-color: #000000;
+    padding: 7px 20px;
+    margin: 0;
+    border-radius: 20px 20px 20px 0;
+    list-style: none;
+    position: absolute;
+    bottom: -50px;
+    left: -130px;
+    transition: all 0.3s ease 0s;
+}
+.box:hover .icon{
+    bottom: 5px;
+    left: 5px;
+}
+.box .icon li{
+    margin: 0 2px;
+    display: inline-block;
+    color: #fff;
+}
+.box .icon li a{
+    color: #333;
+    background-color: #fff;
+    font-size: 13px;
+    text-align: center;
+    line-height: 31px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+.box .icon li button{
+  color: #333;
+  background-color: #fff;
+  font-size: 13px;
+  text-align: center;
+  line-height: 31px;
+  height: 33px;
+  width: 33px;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  transition: all 0.3s ease 0s;
+  padding-bottom: 95%;
+}
+.box .icon li a:hover{ box-shadow: 0 0 0 3px rgba(255,255,255,0.4); }
+@media only screen and (max-width:990px){
+    .box{ margin: 0 0 30px; }
+}
+
+.box .icon li button:hover{ box-shadow: 0 0 0 3px rgba(255,255,255,0.4); }
+@media only screen and (max-width:990px){
+    .box{ margin: 0 0 30px; }
+}
+
+.btnicon-2{
+  width: fit-content !important;
+  position: fixed;
+  bottom: 1%;
+  left: 1%;
+  color: var(--color);
+  background-color: transparent;
+}
+.btnicon-4{
+  width: 100px !important;
+  position: fixed;
+  bottom: 1%;
+  right:  1%;
+  color: var(--color);
+  background-color: transparent;
+}
+
+.btnicon-2 i{
+  background: none;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+  padding: 5px;
+  font-size: 60px;
+}
+.btnicon-4 i{
+  background: none;
+  background-color: transparent;
+  color: #000;
+  border: transparent;
+  font-weight: bolder;
+  cursor: pointer;
+  margin: auto;
+  border-radius: 35px;
+  font-size: 60px;
+
+}
+.btnicon-2 i:hover,.btnicon-4 i:hover{
+  background-color: transparent;
+  color: var(--color);
+  align-self: center;
+}
+
+.container{
+  margin: 50px auto;
+}
+.cart tr{
+  margin-bottom: 20px;
+  padding: 30px;
+}
+.cart-item{
+  padding: 10px;
+  /* width: fit-content; */
+  display:block;
+  text-align: center;
+}
+.cart-item img{
+  width: 100%;
+}
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); 
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5); 
+}
+
+.top{
+  position: fixed;
+  top: 60px;
+  left: 10px;
+}
+
+.submit-btn{
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+.contact{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.contact h1{
+  font-size: 30px;
+}
+
+.contact h6{
+  font-size: 20px;
+}
